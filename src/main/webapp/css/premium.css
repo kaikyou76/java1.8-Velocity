@@ -1,0 +1,306 @@
+/* 保険料計算ページ専用スタイル */
+
+/* リアルタイム計算結果 */
+.realtime-result {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+}
+
+.realtime-result.success {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.realtime-result.error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.realtime-result h4 {
+    margin: 0 0 0.5rem 0;
+    color: #495057;
+    font-size: 1.1rem;
+}
+
+.realtime-result p {
+    margin: 0.25rem 0;
+}
+
+.realtime-result strong {
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.realtime-result small {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.realtime-result .error {
+    color: #dc3545;
+    margin: 0;
+}
+
+/* 計算結果ページ */
+.result-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.result-summary {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    flex: 1;
+}
+
+.summary-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.premium-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.result-details {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details-table th,
+.details-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.details-table th {
+    width: 120px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* フォームコンテナ */
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.form-container h2 {
+    color: #495057;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-container h3 {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+/* 入力フィールドのスタイル */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+/* バッチ計算フォーム */
+.batch-form {
+    background-color: #e9ecef;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.batch-form .form-row {
+    margin-bottom: 1rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .result-summary {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .summary-card {
+        min-width: auto;
+    }
+    
+    .premium-amount {
+        font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .details-table th,
+    .details-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .details-table th {
+        width: 100px;
+    }
+    
+    .form-container {
+        padding: 1rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.realtime-result {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.summary-card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 印刷用スタイル */
+@media print {
+    .action-buttons,
+    nav {
+        display: none !important;
+    }
+    
+    .result-container {
+        max-width: none;
+        margin: 0;
+    }
+    
+    .summary-card {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: 2px solid #000 !important;
+    }
+    
+    .premium-amount {
+        color: black !important;
+    }
+}
+
+/* カスタムバリデーションスタイル */
+input:invalid {
+    border-color: #dc3545 !important;
+}
+
+input:valid {
+    border-color: #28a745 !important;
+}
+
+.validation-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+/* ローディングインジケーター */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.calculating {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.calculating::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}

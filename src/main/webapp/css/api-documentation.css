@@ -1,0 +1,591 @@
+/* APIドキュメントページスタイル */
+
+/* API概要セクション */
+.api-overview {
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.info-item h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-item code,
+.info-item span {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #666;
+}
+
+.response-format {
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.response-format h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* APIエンドポイントセクション */
+.api-endpoints {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.endpoint-section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.endpoint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.endpoint-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.endpoint-header h3 i {
+    color: #667eea;
+}
+
+.endpoint-content {
+    display: none;
+}
+
+.endpoint-item {
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.endpoint-item:last-child {
+    border-bottom: none;
+}
+
+.endpoint-info {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #f8f9fa;
+}
+
+.endpoint-method {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 60px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.method-get {
+    background: #d4edda;
+    color: #155724;
+}
+
+.method-post {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.method-put {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.method-delete {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.endpoint-url {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #333;
+    background: #e9ecef;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-right: 15px;
+    flex: 1;
+}
+
+.endpoint-description {
+    color: #666;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.endpoint-details {
+    padding: 20px;
+}
+
+/* パラメータテーブル */
+.parameters {
+    margin-bottom: 25px;
+}
+
+.parameters h5 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.parameter-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.parameter-table th,
+.parameter-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.parameter-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.parameter-table tr:last-child td {
+    border-bottom: none;
+}
+
+.parameter-table td {
+    font-size: 13px;
+    color: #555;
+}
+
+/* 例セクション */
+.example {
+    margin-bottom: 25px;
+}
+
+.example h5 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.example pre {
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.example pre code {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* テストセクション */
+.test-section {
+    border-top: 1px solid #e1e5e9;
+    padding-top: 20px;
+}
+
+.test-section h5 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.test-result {
+    margin-top: 15px;
+}
+
+.test-result-item {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.test-result-item.success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.test-result-item.error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.test-status {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.test-summary {
+    font-size: 14px;
+}
+
+/* ローディング */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading i {
+    margin-right: 8px;
+}
+
+/* テストモーダル */
+.modal-lg {
+    max-width: 900px;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.test-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.test-request,
+.test-response {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.test-request h4,
+.test-response h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.test-request div,
+.test-response div {
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.test-request strong,
+.test-response strong {
+    color: #555;
+    margin-right: 8px;
+}
+
+.test-result-content {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.test-result-content h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.test-result-content pre {
+    margin: 0;
+    border-radius: 4px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .endpoint-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .endpoint-url {
+        margin-right: 0;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .endpoint-description {
+        min-width: auto;
+    }
+    
+    .parameter-table {
+        font-size: 12px;
+    }
+    
+    .parameter-table th,
+    .parameter-table td {
+        padding: 8px 10px;
+    }
+    
+    .test-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-lg {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .endpoint-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .endpoint-info {
+        padding: 10px 15px;
+    }
+    
+    .endpoint-details {
+        padding: 15px;
+    }
+    
+    .parameter-table th,
+    .parameter-table td {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+    
+    .example pre {
+        font-size: 11px;
+    }
+    
+    .modal-lg {
+        width: 98%;
+        margin: 15% auto;
+    }
+}
+
+/* アクセシビリティ */
+.endpoint-method:focus,
+.endpoint-url:focus,
+.btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* アニメーション */
+.endpoint-section {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* テーマカラー調整 */
+:root {
+    --primary-color: #667eea;
+    --primary-hover: #5a67d8;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+}
+
+/* コードハイライトのカスタマイズ */
+pre[class*="language-"] {
+    background: #2d3748 !important;
+    border-radius: 8px !important;
+    margin: 0 !important;
+}
+
+pre[class*="language-"] code {
+    color: #e2e8f0 !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #f56565 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #68d391 !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #63b3ed !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #d69e2e !important;
+}
+
+.token.function,
+.token.class-name {
+    color: #ed8936 !important;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    .info-item {
+        background: #2d3748;
+        border-left-color: #667eea;
+    }
+    
+    .info-item h4 {
+        color: white;
+    }
+    
+    .info-item code,
+    .info-item span {
+        color: #a0aec0;
+    }
+    
+    .response-format {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .response-format h4 {
+        color: white;
+    }
+    
+    .endpoint-header {
+        background: #4a5568;
+        border-bottom-color: #4a5568;
+    }
+    
+    .endpoint-header h3 {
+        color: white;
+    }
+    
+    .endpoint-info {
+        background: #4a5568;
+    }
+    
+    .endpoint-url {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .endpoint-description {
+        color: #a0aec0;
+    }
+    
+    .parameter-table th {
+        background: #4a5568;
+        color: white;
+    }
+    
+    .parameter-table td {
+        color: #e2e8f0;
+    }
+    
+    .parameter-table {
+        border-color: #4a5568;
+    }
+    
+    .parameter-table th,
+    .parameter-table td {
+        border-bottom-color: #4a5568;
+    }
+    
+    .example h5,
+    .parameters h5,
+    .test-section h5 {
+        color: white;
+    }
+    
+    .test-request,
+    .test-response,
+    .test-result-content {
+        background: #2d3748;
+    }
+    
+    .test-request h4,
+    .test-response h4,
+    .test-result-content h4 {
+        color: white;
+    }
+    
+    .test-request div,
+    .test-response div {
+        color: #a0aec0;
+    }
+    
+    .test-request strong,
+    .test-response strong {
+        color: #e2e8f0;
+    }
+}

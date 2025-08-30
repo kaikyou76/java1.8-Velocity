@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$!pageTitle - 保険システム</title>
+    <link rel="stylesheet" href="$!{contextPath}/css/style.css">
+    #if($!additionalCss)
+        <link rel="stylesheet" href="$!{contextPath}/css/$!{additionalCss}">
+    #end
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>$!pageTitle</h1>
+            <nav>
+                <a href="$!{contextPath}/customer?action=list">顧客管理</a>
+                <a href="$!{contextPath}/premium?action=simulate">保険料シミュレーション</a>
+                <a href="$!{contextPath}/document?action=request">資料請求</a>
+                <a href="$!{contextPath}/">ホーム</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- メッセージ表示 -->
+            #if($!successMessage)
+                <div class="alert alert-success">
+                    $!successMessage
+                </div>
+            #end
+            #if($!errorMessage)
+                <div class="alert alert-error">
+                    $!errorMessage
+                </div>
+            #end
+
+            <!-- メインコンテンツ -->
+            $screen_content
+        </main>
+
+        <footer>
+            <p>&copy; 2024 保険システム</p>
+        </footer>
+    </div>
+
+    <script>
+        // 自動でアラートを閉じる
+        setTimeout(function() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                alert.style.display = 'none';
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

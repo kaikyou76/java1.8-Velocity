@@ -1,0 +1,70 @@
+#parse("/templates/layout.vm")
+#set($pageTitle = "顧客一覧")
+#set($contextPath = $request.getContextPath())
+
+#@layout()
+<div class="search-form">
+    <form method="get" action="$!{contextPath}/customer">
+        <input type="hidden" name="action" value="search">
+        <input type="text" name="keyword" placeholder="顧客名、コード、電話番号で検索" 
+               value="$!{keyword}" class="search-input">
+        <button type="submit" class="btn btn-primary">検索</button>
+        #if($keyword && !$keyword.isEmpty())
+            <a href="$!{contextPath}/customer?action=list" class="btn btn-secondary">クリア</a>
+        #end
+    </form>
+</div>
+
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>顧客コード</th>
+                <th>氏名</th>
+                <th>性別</th>
+                <th>年齢</th>
+                <th>電話番号</th>
+                <th>メール</th>
+                <th>登録日</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            #if($customers && !$customers.isEmpty())
+                #foreach($customer in $customers)
+                    <tr>
+                        <td>$!{customer.customerCode}</td>
+                        <td>$!{customer.lastName} $!{customer.firstName}</td>
+                        <td>#if($customer.gender == 'M')男#else女#end</td>
+                        <td>$!{customer.age}歳</td>
+                        <td>$!{customer.phoneNumber}</td>
+                        <td>$!{customer.email}</td>
+                        <td>$!date.format('yyyy/MM/dd', $customer.createdAt)</td>
+                        <td class="actions">
+                            <a href="$!{contextPath}/customer?action=view&id=$!{customer.id}" class="btn btn-info btn-sm">詳細</a>
+                            <a href="$!{contextPath}/customer?action=edit&id=$!{customer.id}" class="btn btn-warning btn-sm">編集</a>
+                            <a href="$!{contextPath}/customer?action=delete&id=$!{customer.id}" 
+                               class="btn btn-danger btn-sm" 
+                               onclick="return confirm('本当に削除しますか？')">削除</a>
+                        </td>
+                    </tr>
+                #end
+            #else
+                <tr>
+                    <td colspan="8" class="text-center">顧客データがありません</td>
+                </tr>
+            #end
+        </tbody>
+    </table>
+</div>
+
+#if($keyword && !$keyword.isEmpty() && (!$customers || $customers.isEmpty()))
+    <div class="text-center">
+        <p>検索条件に一致する顧客が見つかりませんでした</p>
+    </div>
+#end
+
+<div class="text-right mt-3">
+    <a href="$!{contextPath}/customer?action=edit" class="btn btn-success">新規顧客登録</a>
+</div>
+#end
